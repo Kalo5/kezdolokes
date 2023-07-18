@@ -211,22 +211,107 @@ input:checked + label + ul { display: block; }
       <p>Az Imagine Logo-ban szokásos fraktálos vagy ismétlődő formák jóval látványosabbá tehetők a színek fokozatos változtatásával, esetleg az ábrák térbeli kiterjesztésével és megjelenítésével. <br>
       Egy kis kedvcsináló a fraktálokhoz: <a href="https://hu.pinterest.com/babypens/fractals/">3D fraktálok</a>
       </p>
-        <h3 id="ILhat">Képernyő-határ beállítása a képernyőből kilógó ábrákhoz</h3>
-        <h3 id="ILszin">Színárnyalat változtatása képlettel</h3>
-        <h3 id="ILvalt">Alprogramok és változók</h3>
-	<h3 id="IL3d">3D megjelenítés</h3>
-        <p>Sajnos általános iskolákban még nem tanítják a szögfüggvényeket amelyek a 3D megjelenítéshez szükségesek, de a feltöltött ábrák és némi szülői segítséggel általános iskolai tudással is megérthetők, továbbfejleszthetők a 3D-s programrészek</p>
-	<h3 id="ILjat">3D játék</h3>
 	  
-      <h2 id="CreaC">Scratch 3D azaz CreatiCode</h2>
+        <h3 id="ILhat">Képernyő-határ beállítása a képernyőből kilógó ábrákhoz</h3>
+        <p>Az intéző menü főlap/lap1/t1 teknősére duplán kattintva a pozíció fülnél beállítható a bekerített tartomány amivel a kilógó rajzelemek a képernyő határán eltűnnek.</p> <br id="b">
+        <figure>
+        <img src="imlogo_hatar.jpg" alt="Képernyőhatáron túllógó rajzelemek beállítása" title="Képernyőhatáron túllógó rajzelemek beállítása" width="100%">
+        <figcaption align="center">Képernyőhatáron túllógó rajzelemek beállítása</figcaption>
+        </figure>
+
+        <h3 id="ILszin">Színárnyalat változtatása képlettel</h3>
+        <p>Színárnyalat fokozatos változtatása Imagine logoban a tsz! (lista :pir :zöld :kék) képlettel változtatható úgy, ha ciklusba szervezve a három színösszetevőt 0 és 255 közti értékkel - a ciklusváltozó függvényében - fokozatosan változtatjuk az alábbi példa szerint:</p> <br id="b">
+        <img src="piroscsiga.jpg" alt="színárnyalat változtatás ciklussal" title="színárnyalat változtatás ciklussal" width="100%">
+
+        <h3 id="ILvalt">Alprogramok és változók</h3>
+        <p>Az Imagine Logoban eltérő módon kell jelezni azt ha csak hivatkozunk a változó értékére, illetve azt ha a változót módosítjuk. Például:</p> <br id="b">
+        <p>lokért "i :i+1</p> <br id="b">
+        <p>fenti kifejezés eggyel növeli a lokális i változó értékét. Az i változó elé idézőjelet teszünk ha változtatni akarjuk, és kettőspontot amikor a változó meglévő értékére hivatkozunk.</p> <br id="b">
+        <p>A változókat első használatuk előtt létrehozni(deklarálni) kell. A változók lehetnek lokálisak vagy globálisak. A lokális változó csak abban az eljárásban használható amelyikben létrehoztuk, de az abból az eljárásból meghívott másik eljárásban már nem használhatjuk fel. E szabály megszegése következetlen hibaüzeneteket okozhat.</p> <br id="b">
+        <p style="font-weight: bold; font-style: oblique;">Lokális változó létrehozása:</p> <br id="b">
+        <p>lokvál "i</p> <br id="b">
+        <p>Étrékadás vagy érték-módosítás lokális változó esetén:</p> <br id="b">
+        <p>lokért "i 3</p> <br id="b">
+        <p>vagy</p> <br id="b">
+        <p>lokért "i :i+1</p> <br id="b">
+        <p style="font-weight: bold; font-style: oblique;">Globális változó létrehozásakor a létrehozással egyidejűleg értéket is adhatunk a változónak(lokális változónál ez nem megengedett):</p> <br id="b">
+        <p>globvál "Gvaltozonev</p> <br id="b">
+        <p>vagy</p> <br id="b">
+        <p>globvál "Gvaltozonev 23</p> <br id="b">
+        <p>Globális változó értékadása vagy érték-módosítása a változó létrehozása után(itt a módosítandó változó kerül a végére):</p> <br id="b">
+        <p>név 23 "Gvaltozonev</p> <br id="b">
+        <p>vagy</p> <br id="b">
+        <p>név :i+3 "Gvaltozonev</p> <br id="b">
+        <p>A lokális változó globális változóként való használasta okozhat olyan következetlen hibaüzeneteket amelyek látszólagosan orvosolhatók bizonyos kifejezések zárójelbe helyezésével, azonban ilyenkor újabb sorokra ír ki hibaüzenetet a program.(Viszont a hibaüzenetekkel kifogásolt sorokban zárójelezés alkalmazása segíthet a hibakereső továbbléptetésében, és ezzel a hiba valódi okának megtalálásában)</p> <br id="b">
+        <p>Globális változó módosításakor nem mindig frissül az intéző panel "globális változól" listája, és emiatt megmaradhatnak korábbi hibaüzenetek. Ez a program újrindításával orvosolható, egyéb - látszólag indokolatlan - hibaüzenetekhez hasonlóan.</p> <br>
+
+	<h3 id="IL3d">3D megjelenítés</h3>
+        <p>Sajnos általános iskolákban még nem tanítják a szögfüggvényeket amelyek a 3D megjelenítéshez szükségesek, de a feltöltött ábrák és némi szülői segítséggel általános iskolai tudással is megérthetők, továbbfejleszthetők az alábbi 3D-s programrészek
+          <br>A szögfüggvényekről(sin(), cos()) <a href="itt">itt</a> található szemléletes magyarázat. </p>
+        <p>Alábbi kép a síkbeli forgatás képleteit magyarázza színes keretezések és hozzájuk tartozó azonos színű szakaszok segítségével. A továbbiakban a síkbeli elforgatást fogom használni külön vízszintes síkban, majd külön függőleges síban.(A sorrend felcserélése nem ajánlott - lásd később) Egyelőre erről annyit, hogy a harmadik lehetséges síkban nem forgatom el a kamerát. </p> <br id="b">
+        <img src="forgbiz.jpg" alt="síkbeli forgatás képleteinek magyarázata hasonló háromszögek alapján" title="síkbeli forgatás képleteinek magyarázata hasonló háromszögek alapján" width="100%"><br id="b">
+        <p>Alábbi ábra a programban használt változó-nevekkel magyarázza az alkalmazott koordinátarendszerben történő forgatást. Az elforgatások a számítás szempontjából értelmezhezők úgy is, hogy a camera(C) körül forgatjuk el a térbeli pontokat.
+          <br>Mint fentebb már utaltam rá, csak két irányban fordítom el a kamerát a lehetséges három helyett, mert nem szerettem volna megdönteni oldalra a kamera képét, tehát a függőleges irányok mindig függőlegesek maradnak. Ezt a célt szolgálja az elforgatások sorrendje is, tehát hogy először vízszintes síkban forog a kamera, majd utána függőleges síkban bólint. A sorrend felcserélése esetén a kamera oldal irányban is meg tudna dőlni, és azt visszaállítani leginkább csak a harmadik irány szerinti forgatással lehetne. 
+          <br>A cél az SCR(screen) képernyőn(piros téglalap alakú keret) áthaladó sárga vetítőegyenes döféspontjának meghatározása a képernyő, vagy az annak síkjával párhuzamos X-Y síkú koordinátarendszerben. Az ábrán nem minden nézatban ábrázoltam, az SCR képernyő elfordulását, de természetesen az is mindig a kamerával forog </p> <br id="b">
+        <img src="prgkoord.jpg" alt="A program koordinátarendszerének ábrázolása" title="A program koordinátarendszerének ábrázolása" width="100%"><br id="b">
+        <p>A térbeli megjelenítést végző eljárások közül a 3d nevű az amelyikkel egy egyenes első és második pontja is megadható, míg a 3dc eljárással a teknőc legutóbbi pozíciójából húzunk vonalat az eljárásnak megadott végpontig</p> <br id="b">
+        <img src="elj_3d.jpg" alt="A képernyő-koordináták számítása vonallánc kezdő egyenesén" title="A képernyő-koordináták számítása vonallánc kezdő egyenesén" width="100%"><br id="b">
+        <img src="elj_3dc.jpg" alt="A képernyő-koordináták számítása vonallánc legutóbbi egyenesén" title="A képernyő-koordináták számítása vonallánc legutóbbi egyenesén" width="100%"><br id="b">
+        <p>Fenti eljárások a számításokat a camera beállításai és a szintén a cam eljárásban kiszámolt állandó értékű - csak a kamera-beállítástól függő - mennyiségek alapján végzik.</p> <br id="b">
+        <img src="elj_cam.jpg" alt="A kamera beállításai és a csak attól függő értékek számítása" title="A kamera beállításai és a csak attól függő értékek számítása" width="100%"><br id="b">
+        <p>A minta-ház pontjainak térbeli koordinátáit a house eljárásban adtam meg. Ez csak egy fél ház, és csak a térbeli megjelenítés tesztelését szolgálja.</p> <br id="b">
+        <img src="elj_house.jpg" alt="Térbeli pontok megadása" title="Térbeli pontok megadása" width="100%"><br id="b">
+        <p>A program folyamatos futását a mozgat eljárás biztosítja azzal, hogy mindig meghívja saját magát. Emiatt a program folyamatosan újra-újra rajzolja az ábrát akkor is, ha éppen nem forgatjuk a nézetet.
+          <br>Ha kímélni szeretnénk a számítógépet, akkor a mozgat eljárás meghívása előtt a várj paranccsal várakoztathatjuk a programot. a várj parancs értéke ezredmásodpercben értendő. Ha a nyíl billentyűket nem nyomjuk folyamatosan, akkor a várj érték akár 1000-re is változtatható, így a billentyűleütéseket csak másodpercenként érzékeli a program.
+          <br>Azonban ha a billentyűket hosszan is szeretnénk nyomni, akkor a várj értékét érdemes 30-és 40 közé felvenni, mert a billentyűzet a hosszú billentyűlenyomást kb iyen, 30-ezredmásodpercenkénti billentyűleütésként érzékeli. Mivel az Imagine Logo a billentyűleütéseket eltárolja és maradéktalanul végrehajtja akkor is, ha ezt csak lassaban tudja megtenni, ezért pl. egy 100-es várj értéknél másodpercenként kb 1000/30=33 db billentyűleütést tárol el másodpercenként, és azt 33 másodperc alatt fogja végrehajtani.
+          <br>Ennek az a következménye, hogy egy egy másodpercig tartó billentyűlenyomás után esc billentyűvel csak kb 33 másodperc múlva lehet leállítani a programot, mert addigra kerül sorra az esc billentyűleütés kiértékelése. Az ábrán látható 30-as várj-érték mellett azonban meglehetősen precíz, játékra is alkalmas billentyűkezelést érhetünk el.
+          <br> A szóköz(space) billentyűvel válthatunk a kamera mozgatása, vagy forgatása között.</p> <br id="b">
+        <img src="elj_mozg.jpg" alt="Kamera irányítása billentyűzettel" title="Kamera irányítása billentyűzettel" width="100%"><br id="b">
+        <p>A program indítása a kezd eljárással történik, a program elindításához is ennek az eljárásnak a nevét kell beírni.</p> <br id="b">
+        <img src="elj_kezd.jpg" alt="Progran indítása" title="Progran indítása" width="100%"><br id="b">
+				<h3 id="ILjat">3D játék</h3>
+        <p>Még fejlesztés alatt van, kérlek nézz vissza később.</p> <br id="b">
+
+      	<h2 id="CreaC">Scratch 3D azaz CreatiCode</h2>
+        Készítettem egy minimális kódot arra, hogy a CreatiCode 3D-s városában hogyan lehet egy szereplőt(avatart) viszonylag élethűen irányítani(az irányítás W,S,A,D billentyűkkel történik).
+
+	<h3 id="CCgrav">Gravitáció és ütközés beállítása</h3>	
+        <p>A valósághű környezet létrehozásához elengedhetetlen az ütközések és a gravitáció beállítása. Mivel a gravitáció addig hat az elemekre amíg azok nem ütköznek valami alattuk lévő elemmel, ezért a gravitációt és az ütközést együttttesen, keverve mutatom be.
+          <br>A gravitáció és ütközés a fizikai tömeggel rendelkező elemek közt automatikusan, az azzal nem rendelkező elemeknél külön beállítások alapján működik. A szereplőnknél az ütközések részletesebb elemzésére is szükség van ahhoz, hogy lépcsőn is fel tudjon menni.
+          <br>A fizikai tömeggel nem rendelkező elemeket aszerint kell külön sprite-okba csoportosítani, hogy ki kivel ütközzön vagy ne ütközzön, mert: 
+          <br>- különböző sprite-okban kell lennie azoknak az elemeknek amikkel a szereplőnk ütközhet, és amikkel nem ütközhet - hogy ne kellje az ütközéseket egyesével beállítgatni
+          <br>- Az azonos sprite-okban lévő elemek közt ütközést nem lehet beállítani - ezért a háttér és az egyéb elemek külön sprite-ba kerülnek.
+          <br>A szereplő körüli ütközési bobozt a turn on blocking/non blocking parancs debug értékének no-ra állításával lehet eltüntetni.
+          <br>A háttérként szolgáló sprite-ban két elem van: a 3D-s város és egy zöld sík lap ami az egész város alatt is van, és a városon túlnyúlik. A zöld lapot a 0 szintnél lejjebb kellett sűlyesztenem 10 egységgel, hogy ne látszon át a zöld színe a város aszfaltútjain.
+          <br>A gravitáció eltérő módon van beállítva a szereplőre, és a szereplő mellett induláskor pattogva leeső(fizikai tömeggel rendelkező) nagy piros dobozra. Emiatt kis eltérés is van a piros doboz és a szerplő talppontja között:
+          <br>- a doboznak tömeg(mass=1) van beállítva, amire minden egyéb beállítás nélkül is hat a gravitáció. Ütközni viszont csak akkor tud az alatta lévő zöld talaj-lappal, ha annak is be van állítva fizikai tömeg, de mass=0 értékkel, hogy az ne akarjon leesni.
+          <br>-a szereplőre(avatar)nincsen beállítva fizikai tömeg, így arra csak azért hat a gravitáció, mert a városnak - mint háttérnek - beállítottuk azt - scene with graviti=-100 értékre. Emiatt a szereplőnk a városon belüli kisebb szegélyekre fel tud lépni, viszont a városon kívül a 0 szintig zuhan. (Emiatt van a szereplőnk talpa kicsit magasabban mint a zöld talaj-lap szintje, és mint a piros doboz alja, ami  viszont a talaj-lappal ütközik.)
+          <br>Az elemek nevű sprite-ba a piros dobozon kívül egy házat is elhelyeztem - a 0 szintre, de mivel annak nincsen fizikai tömege, ezért az - a szereplőnkhöz hasonlóan - szintén nem esik le a piros doboz szintjére.
+          <br>Mivel a szereplőnk alapbeállításban átmegy a falakon, és csak a város járdaszegélyeire lép csak fel, (mert arra volt beállítva a háttér-gravitáció) viszont a külön elemként beállított ház padlójára például nem lépne még fel a szereplőnk.
+          <br>A fizikai tömeggel rendelkező elemek automatikusan ütköznek, azonban az azzal nem rendelkező elemekre ez nem igaz. Azoknál a turn on blocking/nonblocking collosiont kell bellítani(megjelölve a sprite-ot amihez ütközik). Mivel ez ütközéskor létrehoz egy ütközési eseményt - when collodong with - ezért abban még további beállításokat lehet végezni, hogy mit csináljon ütközéskor. Itt például azt állítottam be, hogy ha elölről ütközik, akkor lassan emelkedjen. Ezzel fel tud lépni pl. lépcsőre és egyéb elemekre. Ha eltárolnám itt az elem magasságát, akár azt is beállíthatnám hogy bizonyos magasságtól másszon a szereplő.
+          <br>Érdekes lehetőségeket tartogatnak az ütközés beállítására egyéb parancsok is, de az <a href="https://forum.creaticode.com/topic/42/updating-the-collider-box">update collider dimension parancs lefagyást okoz!</a>
+          <br>Egyéb ütközésérzékeléssel kapcsolatos magyarázatok <a href="https://forum.creaticode.com/topic/41/checking-for-object-collisions-with-ray-cast">itt</a> találhatók.
+        </p>
+	  
         <h3 id="CCmoz">Szereplő mozgatása</h3>
+        <p>
+          <br>A szereplő mozgatásához érdemes az add follow camera distance paranccsal beállítani a kamera viselkedését. Ilyenkor a jobb vagy bal egérgombot lenyomva forgathatjuk a kamerát a szereplőnk körül.
+          <br>A szereplők mozgásának animálásához először a szereplő étrehozása után alkalmazandó add animation paranccsal fel kell venni a szereplőnél használni kívánt összes animációt az animációk kiválasztásával, majd a kiválasztások jóváhagyásával(jobb felső comfirm gomb az animáció-választás ablakban).
+          <br>Ezután az egyes mozgásirányoknál a start animation paranccsal lehet az előzőleg kiválasztott animációkból választani. A programban az irányítás nélküli állapotában a szereplő az idle(=tétlen) beállítást kapja.
+        </p>
+	  
         <h3 id="CCir">Érzékenyebb irányítás</h3>
-        <h3 id="CCgrav">Gravitáció és ütközés beállítása</h3>	
+        <p>
+          <br>Játékok irányításához nem javasolt a keypressed események közvetlen használata, mert olyankor a folyamatos billentyűlenyomást csak késleltetve érzékeli a program, úgy ahogyan szövegszerkesztéskor. Ehelyett javasolt a forever vagy a repeat-until függvényekbe beágyazni a billentyűleütéseket, vagy az eseményként megadott billentyűleütésekbe beágyazni a repeat until függvényt, és abba tenni az elmozdulások megadását.
+        </p>
+	  
       <h2 id="GepiT">Gépi tanulás</h2>
         <h3 id="GTelm">Elmélet</h3>
+        <p>Még fejlesztés alatt van, kérlek nézz vissza később.</p>
         <h3 id="GTkez">Írott szám felismerése</h3>
-	  
-    <h1 id="excel">Excel (és) VBA trükkök</h1><br>
+        <p>https://projects.raspberrypi.org/en/projects/teach-a-computer-to-read/2</p>
+
+	  <h1 id="excel">Excel (és) VBA trükkök</h1><br>
       <p>Ebben a fejezetben kevésbé ismert Excel funkciókat és általam készített, szabadon felhasználható Excel makrókat mutatok be. <br> 
 	A hivatkozás-menüben találhatók linkek a régebben, "Sicamber" néven feltöltött, és egykor működőképes kódokhoz. Sajnos a 64-bites váltás okán a régi VBA kódok nem működnek új gépeken, a kódok átalakítása pedig nem túl egyszerű, és lassan halad...
       </p>
@@ -236,9 +321,9 @@ input:checked + label + ul { display: block; }
       Ha a Google Maps-et szeretnéd beilleszteni, akkor először meg kell nyitnod a térképet a https://www.google.com/maps oldalon, és beállítanod a kívánt helyet és nézetet.<br>
 Ezután kattints a jobb alsó sarokban található három pont ikonra, és válaszd a Térkép beágyazása vagy megosztása lehetőséget.
 Válaszd a Beágyazás fület, és másold ki az iframe kódot. Illeszd be ezt az iframe kódot a saját html oldaladba oda, ahova szeretnéd megjeleníteni a térképet.      
-      </p>
-	  
+      </p>	  
       <iframe src="https://www.google.com/maps/d/embed?mid=1yXNj-3YqW53eKWpgfqiIebdZLOLM3ws&ehbc=2E312F" width="100%" height="480"></iframe>
+	  
       <p>Ha az OpenStreetMap-et szeretnéd beilleszteni, akkor először meg kell nyitnod a térképet a https://www.openstreetmap.org oldalon, és beállítanod a kívánt helyet és nézetet.<br>
       Ezután kattints a jobb oldalon található Megosztás ikonra, és válaszd a HTML fület. Másold ki az iframe kódot. Illeszd be ezt az iframe kódot a saját html oldaladba oda, ahova szeretnéd megjeleníteni a térképet.
       </p>
