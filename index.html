@@ -178,7 +178,8 @@ input:checked + label + ul { display: block; }
         	<ul>
 		<li><a  href="#CCmoz">Szereplő mozgatása</a></li>
         	<li><a  href="#CCir">Érzékenyebb irányítás</a></li>
-       	 	<li><a  href="#CCgrav">Gravitáció és ütközés beállítása</a></li>	
+       	 	<li><a  href="#CCgrav">Gravitáció és ütközés beállítása</a></li>
+		<li><a  href="#CCmod">Elemek utólagos módosítása</a></li>
 		</ul>
 
         </li>
@@ -215,7 +216,7 @@ input:checked + label + ul { display: block; }
     Kevés egyszerű példával, csak a kritikus, több utánajárást igénylő problémák megoldásával segíti e fejezet <br><br>
     - az iskolákban széles körben oktatott Imagine Logo, <br> 
     - valamint a 3D-s megjelentés mellett a fizikai rendszerek modellezését is támogató CreatiCode <br><br>
-    használatát. (mottó: az igazi programozás nem a 2D-s ábráknál kezdődik, hanem a 3D-s faktálok és játékok után a fizikai rendszerekkel és a gépi tanulással való ismerkedésnél.)</p>
+    használatát. (mottó: kezdjük izgalmasan a programozást: a 3D-s faktálok és játékok után a fizikai rendszerekkel és a gépi tanulással való ismerkedéssel.)</p>
 
       <h2 id="ImagL">Imagine Logo</h2>
       <p>Az Imagine Logo-ban szokásos fraktálos vagy ismétlődő formák jóval látványosabbá tehetők a színek fokozatos változtatásával, esetleg az ábrák térbeli kiterjesztésével és megjelenítésével. <br>
@@ -273,7 +274,7 @@ input:checked + label + ul { display: block; }
         <img src="elj_house.jpg" alt="Térbeli pontok megadása" title="Térbeli pontok megadása" width="100%"><br id="b">
         <p>A program folyamatos futását a mozgat eljárás biztosítja azzal, hogy mindig meghívja saját magát. Emiatt a program folyamatosan újra-újra rajzolja az ábrát akkor is, ha éppen nem forgatjuk a nézetet.
           <br>Ha kímélni szeretnénk a számítógépet, akkor a mozgat eljárás meghívása előtt a várj paranccsal várakoztathatjuk a programot. a várj parancs értéke ezredmásodpercben értendő. Ha a nyíl billentyűket nem nyomjuk folyamatosan, akkor a várj érték akár 1000-re is változtatható, így a billentyűleütéseket csak másodpercenként érzékeli a program.
-          <br>Azonban ha a billentyűket hosszan is szeretnénk nyomni, akkor a várj értékét érdemes 30-és 40 közé felvenni, mert a billentyűzet a hosszú billentyűlenyomást kb iyen, 30-ezredmásodpercenkénti billentyűleütésként érzékeli. Mivel az Imagine Logo a billentyűleütéseket eltárolja és maradéktalanul végrehajtja akkor is, ha ezt csak lassaban tudja megtenni, ezért pl. egy 100-es várj értéknél másodpercenként kb 1000/30=33 db billentyűleütést tárol el másodpercenként, és azt 33 másodperc alatt fogja végrehajtani.
+          <br>Azonban ha a billentyűket hosszan is szeretnénk nyomni, akkor a várj értékét érdemes 30-és 40 közé felvenni, mert a billentyűzet a hosszú billentyűlenyomást kb iyen, 30-ezredmásodpercenkénti billentyűleütésként érzékeli. Mivel az Imagine Logo a billentyűleütéseket eltárolja és maradéktalanul végrehajtja akkor is, ha ezt csak lassaban tudja megtenni, ezért pl. egy 1000-es várj értéknél kb. 1000/30=33 db billentyűleütést tárol el másodpercenként, és azt 33 másodperc alatt fogja végrehajtani.
           <br>Ennek az a következménye, hogy egy egy másodpercig tartó billentyűlenyomás után esc billentyűvel csak kb 33 másodperc múlva lehet leállítani a programot, mert addigra kerül sorra az esc billentyűleütés kiértékelése. Az ábrán látható 30-as várj-érték mellett azonban meglehetősen precíz, játékra is alkalmas billentyűkezelést érhetünk el.
           <br> A szóköz(space) billentyűvel válthatunk a kamera mozgatása, vagy forgatása között.</p> <br id="b">
         <img src="elj_mozg.jpg" alt="Kamera irányítása billentyűzettel" title="Kamera irányítása billentyűzettel" width="100%"><br id="b">
@@ -312,14 +313,25 @@ input:checked + label + ul { display: block; }
 	  
         <h3 id="CCir">Érzékenyebb irányítás</h3>
         <p>
-          <br>Játékok irányításához nem javasolt a keypressed események közvetlen használata, mert olyankor a folyamatos billentyűlenyomást csak késleltetve érzékeli a program, úgy ahogyan szövegszerkesztéskor. Ehelyett javasolt a forever vagy a repeat-until függvényekbe beágyazni a billentyűleütéseket, vagy az eseményként megadott billentyűleütésekbe beágyazni a repeat until függvényt, és abba tenni az elmozdulások megadását.
+          <br>Játékok irányításához nem javasolt a keypressed események közvetlen használata, mert olyankor a folyamatos billentyűlenyomást csak késleltetve érzékeli a program, úgy ahogyan szövegszerkesztéskor. Ehelyett javasolt a forever vagy a repeat-until függvényekbe beágyazni a billentyűleütéseket, vagy - ha több helyen kell billentyűleütést kezelni(lásd később) - az eseményként megadott billentyűleütésekbe beágyazni a repeat until függvényt, és abba tenni az elmozdulások megadását.
         </p>
 	<p>
         <img src="CC_avatar1.jpg" alt="Szereplő kódja" title="Szereplő kódja" width="100%"><br id="b">
         <img src="CC_avatar2.jpg" alt="Szereplő kódja2" title="Szereplő kódja2" width="100%"><br id="b">
         <img src="CC_varos.jpg" alt="Háttér kódja" title="Háttér kódja" width="100%"><br id="b">
         <img src="CC_elemek.jpg" alt="Egyéb elemek kódja" title="Egyéb elemek kódja" width="100%"><br id="b">
-	</p>  
+	</p> 
+
+	<h3 id="CCmod">Elemek utólagos módosítása</h3>  
+	<p>
+          <br>Az elemek mozgatása vagy egyéb módosítása közvetlenül a létrehozási parancs után egyszerűbben, az elem-nevekre hivatkozás nélkül is megadható. 
+	  <br>Egyéb esetben viszont az elemet létrehozó kód végén ki kell tölteni az "as" tulajdonságot ami az elem neve lesz. 
+	  <br>Minden sprite-ban egyszerre csak egy-egy elem lehet kiválasztva módosításra, ezért az elemet módosítani csak ugyanabban a sprite-ban lehet ahol létrehoztuk -legalábbis jelen tudásom szerint.
+	  <br>Az alábbi ábra egy elem módosítását mutatja - külön eseménykezelővel meghívva a billentyűleütést, mivel az avatar sprite helyett itt az elemek sprite-ban kellett a módosítást megoldanom.
+        </p> 
+	<p>
+        <img src="CC_mod.jpg" alt="Elemek utólagos módosítása" title="Elemek utólagos módosítása" width="100%"><br id="b">
+	</p>	
       <h2 id="GepiT">Gépi tanulás</h2>
         <h3 id="GTelm">Elmélet</h3>
         <p>Még fejlesztés alatt van, kérlek nézz vissza később.</p>
