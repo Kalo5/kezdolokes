@@ -64,12 +64,13 @@ ul ul { display: none; }
 /* A második szintű menü megjelenítése kattintásra */ 
 input:checked + label + ul { display: block; } 
 
+/* "Bevezető" menüpont stílusa */ 	
 .menu1 {
   float: left;
   padding: 15px; 
-  margin-bottom: -15px; 
+  margin-bottom: -10px; 
   position: sticky;
-  top: -15px;
+  top: -10px;
   z-index: 100;
 }
 .row::after {
@@ -335,10 +336,50 @@ input:checked + label + ul { display: block; }
       <h2 id="GepiT">Gépi tanulás</h2>
         <h3 id="GTelm">Elmélet</h3>
         <p>
-	  Még fejlesztés alatt van, kérlek nézz vissza később. De addig is: <br>
+	  Még fejlesztés alatt van, kérlek nézz vissza később is, De addig is: <br><br>
+	  A legegyszerűbb példa:<br>	
+	  <a href="https://blog.fps.hu/neuralis-halozatokrol-erthetoen/">https://blog.fps.hu/neuralis-halozatokrol-erthetoen/</a><br>
+	  Az alábbi linken a csúszka állításával figyelhető meg, hogy hogyan változik a tanulással az, hogy a csomópontok melyik bemenő adatukat mennyire(milyen súllyal) veszik figyelembe.<br>
+	  <a href="https://neural.fps.hu/">https://neural.fps.hu/</a><br><br>
+
+	  Képfelismerés:<br>	  
+   	  <a href="https://thebojda.medium.com/tensorflow-alapoz%C3%B3-d2d1ee97c9db">https://thebojda.medium.com/tensorflow-alapoz%C3%B3-d2d1ee97c9db</a><br><br>
+
+	  Számpélda részletesen magyarázva:<br>
+	  https://sajozsattila.home.blog/2019/07/26/mesterseges-neuralis-halozat-alapjai-1-resz/
+   	  <a href="https://sajozsattila.home.blog/2019/07/26/mesterseges-neuralis-halozat-alapjai-1-resz/">https://sajozsattila.home.blog/2019/07/26/mesterseges-neuralis-halozat-alapjai-1-resz/</a><br><br>
+
+	  A részletesen elmagyarázott példáknál maradva a Karpathy-féle youtube előadások akkor is ajánlhatók, ha angol nyelvűek - pl:<br>
+	  <a href="https://www.youtube.com/watch?v=PaCmpygFfXo">https://www.youtube.com/watch?v=PaCmpygFfXo</a><br>
+	  Fenti előadás szavakkal tanítja a gépet hogy találja ki tetszőleges szórészek következő karakterét.<br>
+	  Nyelvi korlátok áthidalására nekem a Mouse Tooltip Translator nevű chrome-bővítmény bevált.. - ha a youtube-on beállítjuk az angol nyelvű (szövegértés alapján működő) feliratozást, azt ez a bővítmény lefordítja és megjeleníti az angol felirat alatt(vagy helyette) a bővítmény beállításainak advanced/enable youtube subtitle beállításai szerint.<br>
+	  <img src="Youtube felirat beallitasa" alt="Youtube felirat beallitasa" title="Youtube felirat beallitasa" width="100%"><br id="b"><br>
+
+	  Némi elmélet:<br>
+	  <a href="https://www.inf.u-szeged.hu/~tothl/">https://www.inf.u-szeged.hu/~tothl/</a><br>	
+	  fenti honlapon:<br>
+	  <b>gépi tanulás menü (alulról kezdődik)</b><br>
+	  0. diszkriminácíó(döntések) vagy általánosítás - érdemes kiemelni, hogy a döntéseket használják manapság (pl. nem felismerni próbáljuk a képeket, csak eldöntjük, hogy legvalószínűbben mi lehet)<br>
+	  A döntéses módszernél többször említik a hipersíkot mint elválasztó (olykor több-dimenziós) határt. Ezt koordinátageometriai megfontolások alapján lehet értelmezni:<br>
+	  pl. két egymás feletti csomópont esetén a tér csak két dimenziós, és a hipersík egy egyenes lesz. Ilyenkor a két csomópontból kimenő kapcsolatokat a következő réteg minden csomópontja a következőképp súlyozza:<br>
+	  CSP1*w1 + CS2*w2 + b = 0<br>	
+	  Ha CSP1 és CSP" helyett x-et és y-t írunk, akkor ez egy x*w1 + y*w2 = 0 kétismeretlenes egyenlet, ami az x-y koordinátarendszerben egy egyenesként jeleníthető meg. (Ha van még egy ilyen egyenletünk(egyenesünk), akkor a kettő metszéspontja lesz az x és y értékek megoldása.<br>
+	  Ha 3 csomópontból kapja a következő réteg az adatokat akkor az egy x*w1 + y*w2 + z*w3 = 0 háromismeretlenes egyenlet ami már az x-y-z koordinátarendszerben egy sík-ként ábrázolható. Tehát minden réteg annyi dimenziós, ahány csomópont van benne(egymás alatt)<br>
+ 	  Az adatpontok térbeli vagy magasabb dimenziójú torzítását értelmezni -számomra legalábbis- már nehezebb.
+	  Használják még a ||v|| jelölést is ami a v vektor hosszát jelöli, és 2D-ben Pithagorasz után: ||v||=gyök((dx)^2+(dy)^2), 3D-ben pedig: ||v|| = gyök( <b>gyök(</b> (dx)^2+(dy)^2 <b>)^2</b> + (dz)^2 ) = gyök( (dx)^2 + (dy)^2 + (dz)^2 )<br>
+	  <b>gepitan menü</b><br>
+	  07 - a tanulási-döntési fák<br>
+	  10 neuronhálók<br>
+	  <b>neuronhálók menü</b><br>
+	  01 - különbség alakfelismerés és döntés között<br>
+	  03 - max 2 réteg elvileg mindenre elég<br>
+	  07 - arcfelismerés<br><br>  
+		
+	  Egyéb angol nyelvű bevezetők:<br>
 	  <a href="http://playground.tensorflow.org/#activation=tanh&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=4,3,2&seed=0.24722&showTestData=false&discretize=false&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=false">http://playground.tensorflow.org</a><br>
 	  <a href="http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/">http://colah.github.io/posts/2014-03-NN-Manifolds-Topology/</a><br>
 	  <a href="https://cs.stanford.edu/people/karpathy/convnetjs/index.html">https://cs.stanford.edu/people/karpathy/convnetjs/index.html</a><br>
+	
 	</p>
         <h3 id="GTkez">Írott szám felismerése</h3>
         <p><a href="https://projects.raspberrypi.org/en/projects/teach-a-computer-to-read/2">https://projects.raspberrypi.org/en/projects/teach-a-computer-to-read/2</a></p>">
@@ -375,7 +416,7 @@ Válaszd a Beágyazás fület, és másold ki az iframe kódot. Illeszd be ezt a
 </div>
   
 <div class="footer">
-  <p>Resize the browser window to see how the content respond to the resizing.</p>
+  <p>E weblap tartalma szabadon használható arra való hivatkozás nélkül is.</p>
 </div>
 
 </body>
