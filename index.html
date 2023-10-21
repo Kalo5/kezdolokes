@@ -64,13 +64,13 @@ ul ul { display: none; }
 /* A második szintű menü megjelenítése kattintásra */ 
 input:checked + label + ul { display: block; } 
 
-/* "Bevezető" menüpont stílusa */ 	
+/* "Bevezető" menüpont stílusa (a top értékét -15px-ről -5px-re levettem, hogy mobilon könnyebben előjöjjön a menü)*/ 	
 .menu1 {
   float: left;
   padding: 15px; 
   margin-bottom: -15px; 
   position: sticky;
-  top: -10px;
+  top: -5px;
   z-index: 100;
 }
 .row::after {
@@ -295,12 +295,12 @@ input:checked + label + ul { display: block; }
           <br>A gravitáció és ütközés a fizikai tömeggel rendelkező elemek közt automatikusan, az azzal nem rendelkező elemeknél külön beállítások alapján működik. A szereplőnknél az ütközések részletesebb elemzésére is szükség van ahhoz, hogy lépcsőn is fel tudjon menni.
           <br>A fizikai tömeggel nem rendelkező elemeket aszerint kell külön sprite-okba csoportosítani, hogy ki kivel ütközzön vagy ne ütközzön, mert: 
           <br>- különböző sprite-okban kell lennie azoknak az elemeknek amikkel a szereplőnk ütközhet, és amikkel nem ütközhet - hogy ne kellje az ütközéseket egyesével beállítgatni
-          <br>- Az azonos sprite-okban lévő elemek közt ütközést nem lehet beállítani - ezért a háttér és az egyéb elemek külön sprite-ba kerülnek.
+          <br><b>- Az azonos sprite-okban lévő elemek közt ütközést nem lehet beállítani</b> - ezért a háttér és az egyéb elemek külön sprite-ba kerülnek.
           <br>A szereplő körüli ütközési bobozt a turn on blocking/non blocking parancs debug értékének no-ra állításával lehet eltüntetni.
-          <br>A háttérként szolgáló sprite-ban két elem van: a 3D-s város és egy zöld sík lap ami az egész város alatt is van, és a városon túlnyúlik. A zöld lapot a 0 szintnél lejjebb kellett sűlyesztenem 10 egységgel, hogy ne látszon át a zöld színe a város aszfaltútjain.
-          <br>A gravitáció eltérő módon van beállítva a szereplőre, és a szereplő mellett induláskor pattogva leeső(fizikai tömeggel rendelkező) nagy piros dobozra. Emiatt kis eltérés is van a piros doboz és a szerplő talppontja között:
+          <br>A háttérként szolgáló sprite-ban két elem van: a 3D-s város és egy zöld sík lap ami az egész város alatt is van, és a városon túlnyúlik. A zöld lapot a 0 szintnél lejjebb kellett süllyesztenem 10 egységgel, hogy ne látszon át a zöld színe a város aszfaltútjain.
+          <br><b>A gravitáció eltérő módon van beállítva a szereplőre, és a szereplő mellett induláskor pattogva leeső(fizikai tömeggel rendelkező) nagy piros dobozra.</b> Emiatt kis eltérés is van a piros doboz és a szerplő talppontja között:
           <br>- a doboznak tömeg(mass=1) van beállítva, amire minden egyéb beállítás nélkül is hat a gravitáció. Ütközni viszont csak akkor tud az alatta lévő zöld talaj-lappal, ha annak is be van állítva fizikai tömeg, de mass=0 értékkel, hogy az ne akarjon leesni.
-          <br>-a szereplőre(avatar)nincsen beállítva fizikai tömeg, így arra csak azért hat a gravitáció, mert a városnak - mint háttérnek - beállítottuk azt - scene with graviti=-100 értékre. Emiatt a szereplőnk a városon belüli kisebb szegélyekre fel tud lépni, viszont a városon kívül a 0 szintig zuhan. (Emiatt van a szereplőnk talpa kicsit magasabban mint a zöld talaj-lap szintje, és mint a piros doboz alja, ami  viszont a talaj-lappal ütközik.)
+          <br>-a szereplőre(avatar)nincsen beállítva fizikai tömeg, így arra csak azért hat a gravitáció, mert a városnak - mint háttérnek - beállítottuk azt - scene with graviti=-100 értékre. Emiatt a szereplőnk a városon belüli kisebb szegélyekre fel tud lépni, viszont a városon kívül a 0 szintig zuhan(ez a háttéren kívüli terület alapértelmezett járófelülete). <b>Emiatt van a szereplőnk talpa kicsit magasabban mint a zöld talaj-lap szintje, és mint a piros doboz alja, ami  viszont a talaj-lappal ütközik.</b>
           <br>Az elemek nevű sprite-ba a piros dobozon kívül egy házat is elhelyeztem - a 0 szintre, de mivel annak nincsen fizikai tömege, ezért az - a szereplőnkhöz hasonlóan - szintén nem esik le a piros doboz szintjére.
           <br>Mivel a szereplőnk alapbeállításban átmegy a falakon, és csak a város járdaszegélyeire lép csak fel, (mert arra volt beállítva a háttér-gravitáció) viszont a külön elemként beállított ház padlójára például nem lépne még fel a szereplőnk.
           <br>A fizikai tömeggel rendelkező elemek automatikusan ütköznek, azonban az azzal nem rendelkező elemekre ez nem igaz. Azoknál a turn on blocking/nonblocking collosiont kell bellítani(megjelölve a sprite-ot amihez ütközik). Mivel ez ütközéskor létrehoz egy ütközési eseményt - when collodong with - ezért abban még további beállításokat lehet végezni, hogy mit csináljon ütközéskor. Itt például azt állítottam be, hogy ha elölről ütközik, akkor lassan emelkedjen. Ezzel fel tud lépni pl. lépcsőre és egyéb elemekre. Ha eltárolnám itt az elem magasságát, akár azt is beállíthatnám hogy bizonyos magasságtól másszon a szereplő.
