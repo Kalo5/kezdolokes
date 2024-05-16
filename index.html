@@ -202,10 +202,10 @@ input:checked + label + ul { display: block; }
 
   <div class="col-6 col-s-9 main">    
     <h1>Bevezető</h1><br>
-    <p>Ez egy demonstrációs/oktatási-célú weblap egyéb hasznos programozási témakörű tartalmakkal. <br>
-    Maga a honlap az egy-oldalas kialakítást demonstrálja SEO(kereső)- és mobil-barát(progresszív) navigációs megoldással. <br><br>
+    <p>Ez egy demonstrációs/oktatási-célú weblap egyéb programozási témakörű tartalmakkal. <br>
+    Maga a honlap az egy-oldalas kialakítást demonstrálja SEO(kereső)- és mobil-barát(progresszív) navigációs(menü-kezelési) megoldással. <br><br>
     A Menü megoldása különösen támogatja az érintőképernyős lehetőségeket, ezért a legördülő menü az egér föléhelyezése helyett csak rákattintásra nyílik le. Elvileg lehetséges lenne eltérő viselkedés számítógépen és érintőképernyőn, de azt itt mellőzöm, megjegyezve hogy a nagyobb, többszintes menüknél számítógépen is problémás lehet a kattintás nélküli menükezelés. <br>
-    Számítógépes képernyőn praktikusabb lenne a teljesen kibontott, össze nem csukható menürendszer, ami a felső menüponthoz hasonlóan úszik a görgetéssel együtt. Mobilos megjelenéskor viszont nem mutat jól, ha a kezdőoldal egy hosszú kibontott menürendszerrel kezdődik, ezért készítettem lenyithatóra. <br>
+    Mobiltelefonos(és bármilyen keskeny) képernyőn csak a felső menügomb úszik együtt az egysávos görgethető szöveg felett, amivel vissza lehet térni a menürendszer tetejére<br>
     A felső "Bevezető" menüpont görgetéskori viselkedése is a keskeny képernyőn való gyors visszatérést segíti a menühöz. <br>
     A keresőprogramok még ma sem kezelik igazán jól a javascript-es megoldásokat, ezért a koppintásra legördülő menü css és html-es megoldása a label cimkével és a checkbox-al való trükközést tett szükségessé. <br> <br>
     Ez a weboldal csak kliens-oldali megoldásokat használ, és mivel egyoldalas honlap, ezért nem tartalmaz iframe-eket, sem külső fájlokat a fej- és láblécek egységes megjelenítéséhez. Ezek okán azonban könnyen felhasználható egyszerűbb honlapok építéséhez. <br>
@@ -225,20 +225,20 @@ input:checked + label + ul { display: block; }
       </p>
 	  
         <h3 id="ILhat">Képernyő-határ beállítása a képernyőből kilógó ábrákhoz</h3>
-        <p>Az intéző menü főlap/lap1/t1 teknősére duplán kattintva a pozíció fülnél beállítható a bekerített tartomány amivel a kilógó rajzelemek a képernyő határán eltűnnek.</p> <br id="b">
+        <p>Az intéző menü főablak\lap1\t1 teknősére duplán kattintva a pozíció fülnél beállítható a bekerített tartomány amivel a képernyőből kilógó rajzelemek a képernyő határán eltűnnek, nem folytatódnak a képernyő túloldalán mint a körkörös beállításnál.</p> <br id="b">
         <figure>
         <img src="imlogo_hatar.jpg" alt="Képernyőhatáron túllógó rajzelemek beállítása" title="Képernyőhatáron túllógó rajzelemek beállítása" width="100%">
         <figcaption align="center">Képernyőhatáron túllógó rajzelemek beállítása</figcaption>
         </figure>
 
         <h3 id="ILszin">Színárnyalat változtatása képlettel</h3>
-        <p>Színárnyalat fokozatos változtatása Imagine logoban a tsz! (lista :pir :zöld :kék) képlettel változtatható úgy, ha ciklusba szervezve a három színösszetevőt 0 és 255 közti értékkel - a ciklusváltozó függvényében - fokozatosan változtatjuk az alábbi példa szerint:</p> <br id="b">
+        <p>Színárnyalat fokozatos változtatása Imagine logoban a tsz! (lista :piros :zöld :kék) képlettel változtatható úgy, ha ciklusba szervezve a három színösszetevőt 0 és 255 közti értékkel - a "v" ciklusváltozó függvényében - fokozatosan változtatjuk az alábbi példa szerint:(Glovális változók kezelését lásd kicsit lejjebb)</p> <br id="b">
         <img src="piroscsiga.jpg" alt="színárnyalat változtatás ciklussal" title="színárnyalat változtatás ciklussal" width="100%">
 
         <h3 id="ILvalt">Alprogramok és változók</h3>
-        <p>Az Imagine Logoban eltérő módon kell jelezni azt ha csak hivatkozunk a változó értékére, illetve azt ha a változót módosítjuk. Például:</p> <br id="b">
+        <p>Az Imagine Logo-ban eltérő módon kell jelezni azt ha csak hivatkozunk a változó értékére, illetve azt ha a változót módosítjuk. Például:</p> <br id="b">
         <p>lokért "i :i+1</p> <br id="b">
-        <p>fenti kifejezés eggyel növeli a lokális i változó értékét. Az i változó elé idézőjelet teszünk ha változtatni akarjuk, és kettőspontot amikor a változó meglévő értékére hivatkozunk.</p> <br id="b">
+        <p>fenti kifejezés eggyel növeli a lokális i változó értékét(más programnyelvekben: i=i+1). Az i változó elé idézőjelet teszünk ha változtatni akarjuk, és kettőspontot amikor a változó meglévő értékére hivatkozunk.</p> <br id="b">
         <p>A változókat első használatuk előtt létrehozni(deklarálni) kell. A változók lehetnek lokálisak vagy globálisak. A lokális változó csak abban az eljárásban használható amelyikben létrehoztuk, de az abból az eljárásból meghívott másik eljárásban már nem használhatjuk fel. E szabály megszegése következetlen hibaüzeneteket okozhat.</p> <br id="b">
         <p style="font-weight: bold; font-style: oblique;">Lokális változó létrehozása:</p> <br id="b">
         <p>lokvál "i</p> <br id="b">
